@@ -5,14 +5,21 @@ import './App.css'
 
 const rickMortyApi = 'https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/'
 
-const CharacterDropdown = (props) => (
-  <div>
-    <select>
-      <option value="volvo">placeholder</option>
+const CharacterDropdown = (props) => {
+  const characterOptions = props.characters.map((x, i) => <option key={i} value={x.name}>{x.name}</option>)
 
-    </select>
-  </div>
-)
+  return (
+    <div>
+      <select>
+        { characterOptions }
+      </select>
+    </div>
+  )
+}
+
+
+
+
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +39,7 @@ class App extends Component {
     return (
       <>
         <Header />
-        <CharacterDropdown />
+        <CharacterDropdown characters={this.state.characters} />
       </>
     )
   }
