@@ -15,12 +15,18 @@ const CharacterDropdown = (props) => (
 )
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      characters: []
+    }
+  }
 
   componentDidMount() {
     axios.get(rickMortyApi)
       .then(({data}) => this.setState({ characters: data.results }))
   }
-
 
   render() {
     return (
