@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import './App.css';
-import GetCharacter from "./GetCharacter";
-
+import React, { Component } from 'react'
+import Header from './Header'
+import './App.css'
 
 
 class App extends Component {
+
   render() {
     return (
       <>
-      <GetCharacter />
+        <Header />
 
       </>
-    );
+    )
   }
 }
 
-export default App;
+export default App
